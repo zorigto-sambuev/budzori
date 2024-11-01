@@ -1,38 +1,298 @@
-.App {
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  padding: 1rem 2rem; /* Add padding for spacing */
+  border-bottom: none; /* Remove the bottom border */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav a {
+  margin-right: 2rem; /* Add spacing between links */
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav a.active {
+  color: #000; /* Ensuring active links are still black */
+}
+
+nav a:hover {
+  color: #333; /* Slight color change on hover, if desired */
+}
+
+.subheader {
+  text-align: left; /* Align subheader text to the left */
+  margin-left: 2rem; /* Indent for left padding */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.earnings-tab {
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.earnings-tab h1 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.earnings-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 600px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.category-input,
+.earnings-input,
+
+  /*.earnings-input {*/
+  /*  width: 25%; !* Set first field to half width *!*/
+  /*  padding: 0.5rem;*/
+  /*  font-size: 1rem;*/
+  /*  border: 1px solid #ccc;*/
+  /*  border-radius: 4px;*/
+  /*  font-family: 'Poppins', sans-serif;*/
+  /*}*/
+.currency-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+.submit-button {
+  background-color: #4CAF50;
   color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0 1rem;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.category-input {
+  width: 50%; /* Set first field to half width */
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+.earnings-input {
+  width: 50%;
+}
+.currency-input {
+  max-width: 100px;
+}
+.add-button{
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0 1rem;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.add-button:hover,
+.submit-button:hover {
+  background-color: #45a049; /* Darker green on hover */
 }
 
-.App-link {
-  color: #61dafb;
+.category-dropdown {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  width: 50%; /* Set width for dropdown */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.currency-input::-webkit-outer-spin-button,
+.currency-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.modal-container {
+  padding: 1rem;
+  background-color: #444;
+  color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cancel-button {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.modal-field label {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.amount-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.amount-input span {
+  background-color: #444;
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: #ccc;
+}
+
+.save-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}
+
+.banner {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+
+/* DatePicker.css */
+
+.datepicker-modal {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  width: 300px;
+}
+
+.datepicker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.datepicker-header span {
+  font-size: 1.2rem;
+}
+
+.datepicker-header button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.datepicker-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.day-header {
+  font-weight: bold;
+  color: #666;
+  text-align: center;
+}
+
+.empty-day {
+  visibility: hidden;
+}
+
+.day {
+  text-align: center;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.day:hover {
+  background-color: #eee;
+}
+
+.today {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.day.selected {
+  background-color: #f5a623;
+  color: #fff;
+}
+
+.add-transaction-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-transaction-button {
+  background-color: #45a049;
 }
