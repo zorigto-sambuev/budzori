@@ -37,6 +37,7 @@ router.post('/registration',[
         }
     })
 
+    //adding a new route for login
     router.post('/login',
     async (req, res) => {
         try {
