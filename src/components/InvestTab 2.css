@@ -1,0 +1,49 @@
+.earnings-table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.earnings-table th,
+.earnings-table td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.earnings-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+
+}
+
+.earnings-table td {
+    font-family: 'Poppins', sans-serif;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center; /* Center-aligns the table within the container */
+    margin: 20px 0; /* Optional: space between tables */
+    width: 100%; /* Full-width container to help center the table */
+}
+
+table th, table td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+
+}

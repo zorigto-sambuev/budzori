@@ -1,0 +1,5 @@
+{
+  "serverPort": 5500,
+  "mongoUri": "mongodb+srv://muraways:y3YF1fkzNrySn0K5@budget.a8npm.mongodb.net/",
+  "secretKey": "zori-secret-key"
+}
