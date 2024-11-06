@@ -1,20 +1,9 @@
 // src/components/SummaryTable.js
 import React from 'react';
+import noteOptions from '../utils/noteOptions';
 
 function SummaryTable({ transactions, selectedMonth, selectedYear, category }) {
-    // Define note options for each category
-    const noteOptions = {
-        Earnings: ['Company', 'Verdana', 'Taurus', 'Simpson', 'Corp', 'Other'],
-        Bills: ['HOA', 'Internet', 'Gas', 'Water', 'Phone', 'Electricity', 'Insurance', 'Daycare', 'Other'],
-        "Credit Cards": ['Apple', 'Banana', 'Clorix', 'Slade', 'Unlimited', 'RoundCo'],
-        Loans: ['Capital', 'Bester', 'Begger', 'Landos'],
-        Subs: ['PlayStation', 'Spotify', 'Ring', 'Youtube', 'GoogleOne', 'iCloud', 'Leaf', 'OneDrive', 'GitHub', 'Linkedin', 'Carwash', 'Chatter', 'Other'],
-        Mortgage: ['Lennar', 'EdgeHome'],
-        Invest: ['Coinbase', 'CryptoCom']
-    };
-
     const categoryNotes = noteOptions[category] || [];
-
     // Filter transactions by selected month, year, and category
     const groupedTransactions = transactions
         .filter(transaction => transaction.category === category)

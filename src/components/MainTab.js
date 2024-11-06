@@ -1,7 +1,8 @@
-// src/pages/MainTab.js
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import Header from './Header';
 import Modal from './ModalAddTransaction'; // Assuming you have a custom modal component
 import DatePicker from './DatePicker'; // Import the DatePicker component
+import noteOptions from '../utils/noteOptions';
 
 function MainTab({ addTransaction }) {
     const [showModal, setShowModal] = useState(false);
@@ -9,19 +10,8 @@ function MainTab({ addTransaction }) {
     const [category, setCategory] = useState('');
     const [note, setNote] = useState('');
     const [date, setDate] = useState(new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }));
-    // const [transactions, setTransactions] = useState([]);
     const [showBanner, setShowBanner] = useState(false);
     const [showDatePicker, setShowDatePicker] = useState(false); // Controls DatePicker visibility
-    // Category-to-Note Options Mapping
-    const noteOptions = {
-        Earnings: ['Company', 'Verdana', 'Taurus', 'Simpson', 'Corp', 'Other'],
-        Bills: ['HOA', 'Internet', 'Gas', 'Water', 'Phone', 'Electricity', 'Insurance', 'Daycare', 'Other'],
-        "Credit Cards": ['Apple', 'Banana', 'Clorix', 'Slade', 'Unlimited', 'RoundCo'],
-        Loans: ['Capital', 'Bester', 'Begger', 'Landos'],
-        Subs: ['PlayStation', 'Spotify', 'Ring', 'Youtube', 'GoogleOne', 'iCloud', 'Leaf', 'OneDrive', 'GitHub', 'Linkedin', 'Carwash', 'Chatter', 'Other'],
-        Mortgage: ['Lennar', 'EdgeHome'],
-        Invest: ['Coinbase', 'CryptoCom']
-    };
 
     // Toggle main modal
     const toggleModal = () => setShowModal(!showModal);
@@ -57,6 +47,7 @@ function MainTab({ addTransaction }) {
 
     return (
         <div className="main-tab">
+            <Header />
             <h1>Dashboard</h1>
             <p>This is where you can view a summary and interact with the main functionalities of your budgeting
                 app.</p>

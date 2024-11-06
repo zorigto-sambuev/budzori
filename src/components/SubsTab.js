@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Header from './Header';
 import FullHistoryModal from './FullHistoryModal';
 import SummaryTable from './SummaryTable';
 import './InvestTab.css';
@@ -15,6 +16,7 @@ function SubsTab({ transactions }) {
     const closeFullHistoryModal = () => setShowFullHistoryModal(false);
     return (
         <div>
+            <Header />
             <h1>Subs</h1>
             <p>Track all your subscription here.</p>
             <h2>History</h2>

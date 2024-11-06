@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Header from './Header';
 import FullHistoryModal from './FullHistoryModal';
 import SummaryTable from './SummaryTable';
 import './InvestTab.css';
@@ -15,6 +16,7 @@ function CreditCardsTab({ transactions }) {
     const closeFullHistoryModal = () => setShowFullHistoryModal(false);
     return (
         <div>
+            <Header />
             <h1>Credit Cards</h1>
             <p>Track all your credit cards here.</p>
             <div className="earnings-table">
