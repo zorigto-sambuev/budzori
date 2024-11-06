@@ -4,7 +4,12 @@ const config = require("config")
 const authRouter = require("./routes/auth.routes")
 const app = express()
 const PORT = config.get('serverPort')
+const cors = require('cors');
 
+app.use(cors({
+    origin: 'http://localhost:3000', // Allow requests from the frontend origin
+    credentials: true // Enable cookies if you’re using them
+}));
 app.use(express.json())
 app.use("/api/auth", authRouter)
 
