@@ -42,11 +42,14 @@ router.post('/registration',[
     async (req, res) => {
         try {
             const {email, password} = req.body
+            console.log("Login request received for:", email);
             const user = await User.findOne({email})
             if (!user) {
+                console.log("User not found");
                 return res.status(404).json({message: "User not found"})
             }
             const isPassValid = bcrypt.compareSync(password, user.password)
+            console.log("Password valid:", isPassValid);
             if (!isPassValid) {
                 return res.status(400).json({message: "Invalid password"})
             }
