@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Header from './Header';
 import SummaryTable from "./SummaryTable";
 import FullHistoryModal from "./FullHistoryModal";
 
@@ -16,6 +17,7 @@ function BillsTab({ transactions }) {
 
     return (
         <div>
+            <Header />
             <h1>Bills</h1>
             <p>Track all your bills here.</p>
             <h2>History</h2>

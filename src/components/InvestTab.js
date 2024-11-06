@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Header from './Header';
 import FullHistoryModal from './FullHistoryModal';
 import SummaryTable from './SummaryTable';
 import './InvestTab.css';
@@ -17,6 +18,7 @@ function InvestTab({ transactions }) {
 
     return (
         <div>
+            <Header />
             <h1>Invest</h1>
             <p>Track all your investing here.</p>
             <h2>History</h2>

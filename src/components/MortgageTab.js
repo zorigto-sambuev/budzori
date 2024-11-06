@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Header from './Header';
 import FullHistoryModal from './FullHistoryModal';
 import SummaryTable from './SummaryTable';
 import './InvestTab.css';
@@ -16,6 +17,7 @@ function MortgageTab({ transactions }) {
 
     return (
         <div>
+            <Header />
             <h1>Mortgage</h1>
             <p>Track all your mortgage here.</p>
             <h2>History</h2>
