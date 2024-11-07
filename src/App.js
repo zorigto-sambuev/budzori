@@ -15,7 +15,7 @@ import './App.css';
 function App() {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [transactions, setTransactions] = useState([]);
     const addTransaction = (transaction) => {
         setTransactions([transaction, ...transactions]);
@@ -24,12 +24,11 @@ function App() {
     useEffect(() => {
         // Check for token in local storage on initial load
         const token = localStorage.getItem('token');
-
         if (token) {
             setIsAuthenticated(true);
         }
         setLoading(false); // Stop loading after checking for token
-    }, []);
+    }, [loading]);
 
     // Load transactions from local storage on initial load
     useEffect(() => {
