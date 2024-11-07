@@ -9,10 +9,10 @@ function EarningsTab({ transactions }) {
     const earningsTransactions = transactions
         .filter(transaction => transaction.category === 'Earnings')
         .sort((a, b) => new Date(b.date) - new Date(a.date));
-    const latestTransactions = earningsTransactions.slice(0,-10);
-    const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
-    const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
-    const [category, setCategory] = useState('Earnings');
+    // const latestTransactions = earningsTransactions.slice(0,-10);
+    const [selectedMonth] = useState(new Date().getMonth());
+    const [selectedYear] = useState(new Date().getFullYear());
+    const [category] = useState('Earnings');
     // Toggle modal visibility
     const openFullHistoryModal = () => setShowFullHistoryModal(true);
     const closeFullHistoryModal = () => setShowFullHistoryModal(false);
