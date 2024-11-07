@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Route, Routes, useNavigate, Navigate} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
 import MainTab from './components/MainTab';
 import EarningsTab from './components/EarningsTab';
 import InvestTab from './components/InvestTab';
@@ -15,7 +15,7 @@ import './App.css';
 function App() {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [loading, setLoading] = useState(true);
+    const [setLoading] = useState(true);
     const [transactions, setTransactions] = useState([]);
     const addTransaction = (transaction) => {
         setTransactions([transaction, ...transactions]);
