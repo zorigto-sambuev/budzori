@@ -8,10 +8,10 @@ function BillsTab({ transactions }) {
     const billsTransactions = transactions
         .filter(transaction => transaction.category === 'Bills')
         .sort((a, b) => new Date(b.date) - new Date(a.date));
-    const latestTransactions = billsTransactions.slice(0,-10);
-    const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
-    const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
-    const [category, setCategory] = useState('Bills');
+    // const latestTransactions = billsTransactions.slice(0,-10);
+    const [selectedMonth] = useState(new Date().getMonth());
+    const [selectedYear] = useState(new Date().getFullYear());
+    const [category] = useState('Bills');
     const openFullHistoryModal = () => setShowFullHistoryModal(true);
     const closeFullHistoryModal = () => setShowFullHistoryModal(false);
 
