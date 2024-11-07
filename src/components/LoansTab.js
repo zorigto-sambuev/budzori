@@ -9,9 +9,9 @@ function LoansTab({ transactions }) {
     const loansTransactions = transactions
         .filter(transaction => transaction.category === 'Loans')
         .sort((a, b) => new Date(b.date) - new Date(a.date));
-    const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
-    const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
-    const [category, setCategory] = useState('Loans');
+    const [selectedMonth] = useState(new Date().getMonth());
+    const [selectedYear] = useState(new Date().getFullYear());
+    const [category,] = useState('Loans');
     const openFullHistoryModal = () => setShowFullHistoryModal(true);
     const closeFullHistoryModal = () => setShowFullHistoryModal(false);
 

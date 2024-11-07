@@ -9,10 +9,10 @@ function InvestTab({ transactions }) {
     const investTransactions = transactions
         .filter(transaction => transaction.category === 'Invest')
         .sort((a, b) => new Date(b.date) - new Date(a.date));
-    const latestTransactions = investTransactions.slice(0,-10);
-    const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
-    const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
-    const [category, setCategory] = useState('Invest');
+    // const latestTransactions = investTransactions.slice(0,-10);
+    const [selectedMonth] = useState(new Date().getMonth());
+    const [selectedYear] = useState(new Date().getFullYear());
+    const [category] = useState('Invest');
     const openFullHistoryModal = () => setShowFullHistoryModal(true);
     const closeFullHistoryModal = () => setShowFullHistoryModal(false);
 
