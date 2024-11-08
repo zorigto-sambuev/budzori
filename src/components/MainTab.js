@@ -48,7 +48,7 @@ function MainTab({ addTransaction }) {
     return (
         <div className="main-tab">
             <Header />
-            <h1>Dashboard</h1>
+            <h1>Dashboard1</h1>
             <p>This is where you can view a summary and interact with the main functionalities of your budgeting
                 app.</p>
             <button className="add-transaction-button" onClick={toggleModal}>Add Transaction</button>
