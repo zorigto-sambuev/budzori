@@ -6,7 +6,7 @@ pipeline {
             }
         }
     environment {
-            DOCKER_IMAGE = 'budzori'
+            DOCKER_IMAGE = 'zorigtos/budzori'
         }
     tools {
             nodejs 'NodeJS installations'
