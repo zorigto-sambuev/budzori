@@ -1,11 +1,11 @@
 pipeline {
     agent {
             docker {
-                image 'node:14'
+                image 'node:14-alpine'
             }
         }
     environment {
-            DOCKER_IMAGE = 'mern_app_image'
+            DOCKER_IMAGE = 'budzori'
         }
     tools {
             nodejs 'NodeJS installations'
