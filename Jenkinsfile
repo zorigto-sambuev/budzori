@@ -20,7 +20,6 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh 'npm config set cache $(pwd)/.npm-cache --global'
-                sh 'chown -R jenkins:jenkins /usr/local/etc'
                 sh 'npm install --unsafe-perm'
             }
         }
