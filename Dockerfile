@@ -8,7 +8,6 @@ RUN npm install
 COPY . .
 
 RUN npm run build
-RUN chown -R jenkins:jenkins /app
 USER jenkins
 EXPOSE 3000
 CMD ["npm", "start"]
