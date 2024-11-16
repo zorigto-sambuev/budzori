@@ -17,13 +17,13 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/zorigto-sambuev/budzori.git'
             }
         }
-        stage('Install Dependencies') {
-            steps {
-//                 sh 'npm config set cache $(pwd)/.npm-cache --global'
-//                 sh 'npm install --unsafe-perm'
-                sh 'npm install'
-            }
-        }
+//         stage('Install Dependencies') {
+//             steps {
+// //                 sh 'npm config set cache $(pwd)/.npm-cache --global'
+// //                 sh 'npm install --unsafe-perm'
+//                 sh 'npm install'
+//             }
+//         }
 //         stage('Docker Build and Push') {
 //             steps {
 //                 sh 'docker build -t $DOCKER_IMAGE .'
