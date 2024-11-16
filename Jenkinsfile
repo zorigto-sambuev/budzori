@@ -1,12 +1,12 @@
 pipeline {
     agent {
             docker {
-                image 'node:14-alpine'
-                args '-u root'
+                image 'node'
+//                 args '-u root'
             }
         }
     environment {
-            DOCKER_IMAGE = 'zorigtos/budzori'
+            DOCKER_IMAGE = 'budzori'
         }
     tools {
             nodejs 'NodeJS installations'
@@ -23,16 +23,16 @@ pipeline {
                 sh 'npm install --unsafe-perm'
             }
         }
-        stage('Docker Build and Push') {
-            steps {
-                sh 'docker build -t $DOCKER_IMAGE .'
-                sh 'docker tag $DOCKER_IMAGE <dockerhub-username>/$DOCKER_IMAGE:latest'
-                withCredentials([string(credentialsId: 'docker-hub-credentials-id', variable: 'DOCKER_HUB_PASSWORD')]) {
-                    sh 'docker login -u <dockerhub-username> -p $DOCKER_HUB_PASSWORD'
-                }
-                sh 'docker push <dockerhub-username>/$DOCKER_IMAGE:latest'
-            }
-        }
+//         stage('Docker Build and Push') {
+//             steps {
+//                 sh 'docker build -t $DOCKER_IMAGE .'
+//                 sh 'docker tag $DOCKER_IMAGE <dockerhub-username>/$DOCKER_IMAGE:latest'
+//                 withCredentials([string(credentialsId: 'docker-hub-credentials-id', variable: 'DOCKER_HUB_PASSWORD')]) {
+//                     sh 'docker login -u <dockerhub-username> -p $DOCKER_HUB_PASSWORD'
+//                 }
+//                 sh 'docker push <dockerhub-username>/$DOCKER_IMAGE:latest'
+//             }
+//         }
 //         stage('Test') {
 //             steps {
 // //                 sh 'npm test'
@@ -41,7 +41,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                sh 'docker run -d -p 80:3000 --name mern_app <dockerhub-username>/$DOCKER_IMAGE:latest'
+                sh 'docker run -d -p 3000:3000 --name budzori --rm zorigtos/$DOCKER_IMAGE:latest'
                 // Add your deployment steps here (e.g., upload files, restart server, etc.)
             }
         }
