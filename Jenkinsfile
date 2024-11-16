@@ -19,8 +19,9 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'npm config set cache $(pwd)/.npm-cache --global'
-                sh 'npm install --unsafe-perm'
+//                 sh 'npm config set cache $(pwd)/.npm-cache --global'
+//                 sh 'npm install --unsafe-perm'
+                sh 'npm install'
             }
         }
 //         stage('Docker Build and Push') {
