@@ -1,13 +1,13 @@
-FROM node:14-alpine
+FROM node
 
-RUN addgroup -S jenkins && adduser -S jenkins -G jenkins
+#RUN addgroup -S jenkins && adduser -S jenkins -G jenkins
 
 WORKDIR /app
-COPY package*.json ./
+COPY package.json /app
 RUN npm install
 COPY . .
 
-RUN npm run build
-USER jenkins
+#RUN npm run build
+#USER jenkins
 EXPOSE 3000
 CMD ["npm", "start"]
