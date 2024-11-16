@@ -24,16 +24,16 @@ pipeline {
 //                 sh 'npm install'
 //             }
 //         }
-//         stage('Docker Build and Push') {
-//             steps {
-//                 sh 'docker build -t $DOCKER_IMAGE .'
-//                 sh 'docker tag $DOCKER_IMAGE <dockerhub-username>/$DOCKER_IMAGE:latest'
+        stage('Docker Build and Push') {
+            steps {
+                sh 'docker build -t $DOCKER_IMAGE .'
+                sh 'docker tag $DOCKER_IMAGE zorigtos/$DOCKER_IMAGE:latest'
 //                 withCredentials([string(credentialsId: 'docker-hub-credentials-id', variable: 'DOCKER_HUB_PASSWORD')]) {
 //                     sh 'docker login -u <dockerhub-username> -p $DOCKER_HUB_PASSWORD'
 //                 }
-//                 sh 'docker push <dockerhub-username>/$DOCKER_IMAGE:latest'
-//             }
-//         }
+                sh 'docker push zorigtos/$DOCKER_IMAGE:latest'
+            }
+        }
 //         stage('Test') {
 //             steps {
 // //                 sh 'npm test'
