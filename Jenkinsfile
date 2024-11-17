@@ -1,10 +1,11 @@
 pipeline {
-    agent {
-            docker {
-                image 'node'
-//                 args '-u root'
-            }
-        }
+    agent any
+//     agent {
+//             docker {
+//                 image 'node'
+// //                 args '-u root'
+//             }
+//         }
     environment {
             DOCKER_IMAGE = 'budzori'
         }
